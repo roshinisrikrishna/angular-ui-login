@@ -1,0 +1,37 @@
+<div style="text-align: center">
+
+<br>
+<br>
+
+
+    
+    <label>Name: </label>
+    <br>
+    <input type="text" required [(ngModel)]="userName" />
+    <br>
+    <br>
+    <label>Password: </label>
+    <br>
+    <input type="password" required [(ngModel)]="userPassword" />
+    <br>
+    <br>
+    <label>Date of Birth: </label>
+    <br>
+    <input type="text" [(ngModel)]="udob" />
+    <br>
+    <br>
+    <label>Email: </label>
+    <br>
+    <input type="email" [(ngModel)]="umail" />
+    <br>
+    <br>
+    <button class="btn btn-danger" (click)="delete()">DELETE</button>
+
+    
+&nbsp;
+&nbsp;
+<button class="btn btn-success" (click)="update()">UPDATE</button>
+
+    <p [(ngClass)]="messageStyle">{{updateMessage}}</p>
+    <p [(ngClass)]="messageStyle">{{deleteMessage}}</p>
+  </div>

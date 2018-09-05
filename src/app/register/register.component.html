@@ -1,0 +1,32 @@
+<div  style="text-align:center">
+<br>
+<br>
+  <label>ID: </label>
+  <br>
+  <input type="text" required [(ngModel)]="userid" />
+  <br>
+  <br>
+  <label>Name: </label>
+  <br>
+  <input type="text" required [(ngModel)]="userName" />
+  <br>
+  <br>
+  <label>Password: </label>
+  <br>
+  <input type="password" required [(ngModel)]="userPassword" />
+  <br>
+  <br>
+  <label>Date of Birth: </label>
+  <br>
+  <input type="text" [(ngModel)]="udob" />
+  <br>
+  <br>
+  <label>Email: </label>
+  <br>
+  <input type="email" [(ngModel)]="umail" />
+  <br>
+  <br>
+  
+  <button class="btn btn-primary" (click)="register()">REGISTER</button>
+  <p [(ngClass)]="messageStyle">{{registermessage}}</p>
+</div>
