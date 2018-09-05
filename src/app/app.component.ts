@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './extras/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,15 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  uid:string;
  uname:string;
  upassword:string;
  message:string;
  messageStyle :string;
  showValue:boolean;
  registermessage:string;
- constructor(){
-   this.uname="";
-   this.upassword="";
+ constructor(public userService:UserService){
+   
  }
 
  show(parameter)
@@ -31,18 +32,25 @@ export class AppComponent {
    return this.showValue;
  }
  submit(){
-if(this.uname!=="")
+
+
+this.userService.getUser(this.uid).then(data=>{
+  console.log('data at component',data);
+if(data.name===this.uname)
 {
-  this.message=`Successfully logged in by ${this.uname}`;
-  this.messageStyle = 'greenText';
-
+this.message='Login Successful by ${this.uname}';
 }
-else{
-  this.message=`Could'nt log in `;
-  this.messageStyle = 'redText';
-
-
+else
+{
+  this.message='Invalid user';
 }
+
+
+
+},error=>{
+console.log('error at api',error);
+});
+
  }
  register(){
   if(this.uname!==""&&this.upassword!=="")

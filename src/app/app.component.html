@@ -1,37 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align: center">
-<button (click)="showValue=show('login')">LOGIN </button> 
-<button (click)="showValue=show('register')">REGISTER</button> 
+  <button (click)="showValue=show('login')">LOGIN </button>
+  <button (click)="showValue=show('register')">REGISTER</button>
 </div>
 <br>
 <br>
 <br>
 <div *ngIf="!showValue" style="text-align:center">
- <label>Name: </label>
- <input type="text" [(ngModel)]="uname"/>
-<br>
-<br>
-<label>Password: </label>
-<input type="password" [(ngModel)]="upassword"/>
-<br>
-<br>
-<button (click)="submit()" >Submit</button> 
-<p [(ngClass)]="messageStyle">{{message}}</p>
+  <label>ID: </label>
+  <input type="text" [(ngModel)]="uid" />
+  <br>
+  <br>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="uname" />
+  <br>
+  <br>
+  <label>Password: </label>
+  <input type="password" [(ngModel)]="upassword" />
+  <br>
+  <br>
+  <button (click)="submit()">Submit</button>
+  <p [(ngClass)]="messageStyle">{{message}}</p>
 </div>
 
 <div *ngIf="showValue" style="text-align:center">
-    <label>Name: </label>
-    <input type="text" [(ngModel)]="uname"/>
-   <br>
-   <br>
-   <label>Password: </label>
-   <input type="password" [(ngModel)]="upassword"/>
-   <br>
-   <br>
-   <label>Date of Birth: </label>
-    <input type="text" [(ngModel)]="udob"/>
-   <br>
-   <br>
-   <button (click)="register()" >Submit</button> 
-   <p [(ngClass)]="messageStyle">{{registermessage}}</p>
-   </div>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="uname" />
+  <br>
+  <br>
+  <label>Password: </label>
+  <input type="password" [(ngModel)]="upassword" />
+  <br>
+  <br>
+  <label>Date of Birth: </label>
+  <input type="text" [(ngModel)]="udob" />
+  <br>
+  <br>
+  <button (click)="register()">Submit</button>
+  <p [(ngClass)]="messageStyle">{{registermessage}}</p>
+</div>
