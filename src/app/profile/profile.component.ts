@@ -54,4 +54,10 @@ export class ProfileComponent implements OnInit {
       this.deleteMessage = 'NOT DELETED';
     });
   }
+
+  //function for sign out button
+  sign_out() {
+    //navigate to login page
+    this.router.navigateByUrl('/login');
+  }
 }
