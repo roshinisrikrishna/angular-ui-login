@@ -12,8 +12,8 @@ export class RegisterComponent {
   userid: string;
   userName: string;
   userPassword: string;
-  udob: string;
-  umail: string;
+  userdob: string;
+  userMail: string;
   registermessage: string;
 
   constructor(private userService: UserService, private router: Router) { }
@@ -24,8 +24,8 @@ export class RegisterComponent {
       id: this.userid,
       name: this.userName,
       password: this.userPassword,
-      birthyear: this.udob,
-      email: this.umail
+      birthyear: this.userdob,
+      email: this.userMail
     };
     //using userService for creating a user with those details in database
     this.userService.createUser(user).then(data => {

@@ -13,9 +13,9 @@ export class ProfileComponent implements OnInit {
   deleteMessage: string;
   userName: string;
   userPassword: string;
-  udob: string;
-  uid: string;
-  umail: string;
+  userdob: string;
+  userId: string;
+  userMail: string;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -23,8 +23,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.userName = this.userService.userName;
     this.userPassword = this.userService.userPassword;
-    this.udob = this.userService.userdob;
-    this.umail = this.userService.usermail;
+    this.userdob = this.userService.userdob;
+    this.userMail = this.userService.usermail;
   }
 
   //function for update button
@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit {
       id: this.userService.userid,
       name: this.userName,
       password: this.userPassword,
-      birthyear: this.udob,
-      email: this.umail
+      birthyear: this.userdob,
+      email: this.userMail
     };
     //using userService to update the data in the database via api server
     this.userService.updateUser(user).then(data => {

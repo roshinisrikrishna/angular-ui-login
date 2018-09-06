@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  uid: string;
-  upassword: string;
+  userid: string;
+  userPassword: string;
   message: string;
 
   constructor(public userService: UserService, private router: Router) { }
@@ -17,8 +17,8 @@ export class LoginComponent {
   //function for login button
   submit() {
     //using userService to validate userpassword by retrieving data from api server
-    this.userService.getUser(this.uid).then(data => {
-      if (data.password === this.upassword) {
+    this.userService.getUser(this.userid).then(data => {
+      if (data.password === this.userPassword) {
         //after login navigate to profile page
         this.router.navigateByUrl('/profile');
       }
