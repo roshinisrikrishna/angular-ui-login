@@ -7,42 +7,32 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  uid:string;
- upassword:string;
- 
- message:string;
+export class LoginComponent {
+  uid: string;
+  upassword: string;
+  message: string;
 
-  constructor(public userService:UserService,private router:Router) { }
+  constructor(public userService: UserService, private router: Router) { }
 
-  submit(){
-
-
-    this.userService.getUser(this.uid).then(data=>{
-      console.log('data at component',data);
-    if(data.password===this.upassword)
-    {
-    this.message=`Login Successful by ${data.name}`;
-    this.router.navigateByUrl('/profile');
-
-    }
-    else
-    {
-      this.message='Invalid user';
-    }
-    
-    
-    
-    },error=>{
-    console.log('error at api',error);
-    this.message='Invalid user';
+  //function for login button
+  submit() {
+    //using userService to validate userpassword by retrieving data from api server
+    this.userService.getUser(this.uid).then(data => {
+      if (data.password === this.upassword) {
+        //after login navigate to profile page
+        this.router.navigateByUrl('/profile');
+      }
+      else {
+        this.message = 'Invalid user';
+      }
+    }, error => {
+      console.log('error at api', error);
+      this.message = 'Invalid user';
     });
-     }
-     navregister(){
-       this.router.navigateByUrl('/register')
-     }
-
-  ngOnInit() {
   }
 
+  //function for navigating to register page
+  navregister() {
+    this.router.navigateByUrl('/register')
+  }
 }

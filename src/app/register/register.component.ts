@@ -8,38 +8,32 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   userid: string;
   userName: string;
   userPassword: string;
- udob:string;
- umail:string;
+  udob: string;
+  umail: string;
   registermessage: string;
 
-  constructor(public userService: UserService,private router:Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
+  //function for register button
   register() {
-
     let user: User = {
       id: this.userid,
       name: this.userName,
       password: this.userPassword,
-      birthyear:this.udob,
-      email:this.umail
+      birthyear: this.udob,
+      email: this.umail
     };
-    this.userService.createUser(user).then(data=>{
-      this.registermessage='REGISTER SUCCESSFUL'
+    //using userService for creating a user with those details in database
+    this.userService.createUser(user).then(data => {
+      //after registration navigate to profile page
       this.router.navigateByUrl('/profile');
-
-    },error=>{
-      this.registermessage='REGISTER FAILED'
-
-    }); 
-     
-
+    }, error => {
+      //if user already exists
+      this.registermessage = 'USER ALREADY EXISTS OR REQUIRED FIELDS ARE NOT FILLED'
+    });
   }
-
-  ngOnInit() {
-  }
-
 }

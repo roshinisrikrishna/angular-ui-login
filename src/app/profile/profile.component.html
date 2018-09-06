@@ -1,37 +1,36 @@
 <div style="text-align: center">
-
-<br>
-<br>
-
-
-    
+    <br>
+    <br>
+    <!-- input user name   -->
     <label>Name: </label>
     <br>
     <input type="text" required [(ngModel)]="userName" />
     <br>
     <br>
+    <!-- input user password   -->
     <label>Password: </label>
     <br>
     <input type="password" required [(ngModel)]="userPassword" />
     <br>
     <br>
+    <!-- input user date of birth   -->
     <label>Date of Birth: </label>
     <br>
     <input type="text" [(ngModel)]="udob" />
     <br>
     <br>
+    <!-- input user mail   -->
     <label>Email: </label>
     <br>
     <input type="email" [(ngModel)]="umail" />
     <br>
     <br>
+    <!-- delete button   -->
     <button class="btn btn-danger" (click)="delete()">DELETE</button>
-
-    
-&nbsp;
-&nbsp;
-<button class="btn btn-success" (click)="update()">UPDATE</button>
+    &nbsp; &nbsp;
+    <!-- update button   -->
+    <button class="btn btn-success" (click)="update()">UPDATE</button>
 
     <p [(ngClass)]="messageStyle">{{updateMessage}}</p>
     <p [(ngClass)]="messageStyle">{{deleteMessage}}</p>
-  </div>
+</div>

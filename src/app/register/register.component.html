@@ -1,32 +1,37 @@
-<div  style="text-align:center">
-<br>
-<br>
+<div style="text-align:center">
+  <br>
+  <br>
+  <!-- input user id -->
   <label>ID: </label>
   <br>
   <input type="text" required [(ngModel)]="userid" />
   <br>
   <br>
+  <!-- input user -->
   <label>Name: </label>
   <br>
   <input type="text" required [(ngModel)]="userName" />
   <br>
   <br>
+  <!-- input user password-->
   <label>Password: </label>
   <br>
   <input type="password" required [(ngModel)]="userPassword" />
   <br>
   <br>
+  <!-- input user Date of Birth-->
   <label>Date of Birth: </label>
   <br>
   <input type="text" [(ngModel)]="udob" />
   <br>
   <br>
+  <!-- input user Email-->
   <label>Email: </label>
   <br>
   <input type="email" [(ngModel)]="umail" />
   <br>
   <br>
-  
+  <!-- Register button -->
   <button class="btn btn-primary" (click)="register()">REGISTER</button>
   <p [(ngClass)]="messageStyle">{{registermessage}}</p>
 </div>

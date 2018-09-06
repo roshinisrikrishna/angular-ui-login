@@ -1,24 +1,24 @@
 <div class="form-group" style="text-align: center">
-
-
   <br>
   <br>
   <br>
-
+  <!-- input user id -->
   <label>ID </label>
   <br>
-  <input type="text"[(ngModel)]="uid" />
+  <input type="text" [(ngModel)]="uid" />
   <br>
   <br>
+  <!-- input user password -->
   <label>Password </label>
   <br>
   <input type="password" [(ngModel)]="upassword" />
   <br>
   <br>
+  <!-- login button -->
   <button class="btn btn-info" (click)="submit()">LOGIN</button>
   <p [(ngClass)]="messageStyle">{{message}}</p>
+  <!-- register button -->
   <p>If not a user.&nbsp;
     <a href="/register">Register</a>
   </p>
-
 </div>
