@@ -36,4 +36,10 @@ export class RegisterComponent {
       this.registermessage = 'USER ALREADY EXISTS OR REQUIRED FIELDS ARE NOT FILLED'
     });
   }
+
+  //function for sign out button
+  sign_out() {
+    //navigate to login page
+    this.router.navigateByUrl('/login');
+  }
 }
